@@ -67,6 +67,29 @@ Neste estudo, são analisados dados socioeconômicos dos 36 bairros da cidade de
 - Apresentar como usar as distribuições estatísticas no pacote SciPy-Python e obter suas medidas estatísticas.
 - Exemplos de aplicação.
 
+### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula10/notebook_aula10.ipynb) Aula 10 - EDA com Pandas e Seaborn
+
+- Uso do Pacote Seaborn para o processo de EDA.
+- Uso de soluções sobre o Padas paar agilizar e ou automatizar o processo de EDA.
+
+### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula11/notebook_aula11.ipynb) Aula 11 - Exercício de EDA com Base de Dados de Alunos da UFRN
+
+Apresentar um procedimento com as principais atividades utilizadas num procedimento de EDA (Análise Exploratória de Dados), que consistem basicamente de:
+- Obtenção/captura de dados.
+- Análise dos dados na base (dados faltantes, dados espúrios, dados incorretos).
+- Limpeza na base de dados (seleção, eliminação e imputação de dados).
+- Análise estatísitca dos dados e suas interrelações.
+- Visualização de dados.
+
+### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula12/notebook_aula12.ipynb) Aula 12 - Pacote Plotly
+
+- Introdução ao Plotly
+- Exemplos de gráficos interativos
+
+### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula14/notebook_aula14.ipynb) Aula 14 - Pacote Sklearn com classificação de dados
+
+- Apresentar as principais funcionalidades do pacote sklearn, utilizando aprendizagem supervisionada como exemplo (o algoritmo KNN).
+
 ## Docentes Responsáveis
 
 - **Prof. Luis Affonso Guedes¹**  
