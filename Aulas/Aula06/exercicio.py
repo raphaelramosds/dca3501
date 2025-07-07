@@ -33,11 +33,13 @@ print("Check the rows of population with missing values")
 print(df_merged[df_merged['population'].isna()].head(), "\n")
 
 print("Verificação de quais itens de \"population\" estão faltando")
-# Como o .loc consegue fazer isso:
-# 1. Recupera as linhas em que `state` é null
-# 2. Extrai apenas a coluna `state/region` dessas linhas
-# 3. Lista apenas valores diferentes (únicos) de `state/region`
-print(df_merged.loc[df_merged['state'].isnull(), 'state/region'].unique(), "\n")
+print(
+    # Explicação:
+    # 1. Recupera as linhas em que `state` é null
+    # 2. Extrai apenas a coluna `state/region` dessas linhas
+    # 3. Lista apenas valores diferentes (únicos) de `state/region`
+    df_merged.loc[df_merged['state'].isnull(), 'state/region'].unique()
+, "\n")
 
 print("EXTRA. Preencha a coluna `state`: United States caso `state/region` seja US, e Puerto Rico caso seja PR")
 df_merged.loc[df_merged['state/region'] == 'US', 'state'] = 'United States'
@@ -98,19 +100,32 @@ data2010.head()
 Passo 6. Obtenha os 5 estados com maiores densidades populacionais em 2010 (em order decrescente)
 """
 
-# TODO
+def sort_df(df : pd.DataFrame, col : str, asc : bool = True) -> pd.DataFrame:
+    """
+    Ordena uma cópia de um DataFrame por uma coluna específica e a retorna.
+    """
+    df_copy = df.copy()
+    return df_copy.sort_values(by=col, ascending=asc)
+
+print("Top-5 estados com maiores densidades populacionais em 2010 (em order decrescente)")
+print(sort_df(data2010, 'population', False)[:5][['state', 'population']], "\n")
 
 """
 Passo 7. Obtenha os 5 estados com menores densidades populacionais em 2010 (em order decrescente)
 """
 
-# TODO
+print("Top-5 estados com menores densidades populacionais em 2010 (em order decrescente)")
+print(sort_df(data2010, 'population')[:5][['state', 'population']], "\n")
 
 """
 Passo 8. Obtenha os 05 estados com maiores proporções de jovens (under 18) em 2010 (apresente o resultado em ordem decrescente)
 """
 
-# TODO
+# Montar DataFrame contendo dados de idades abaixo de 18
+data2010_under18 = df_final.query("year == 2010 & ages == 'under18'")
+
+print("Top-5 estados com maiores proporções de jovens (under 18) em 2010 (apresente o resultado em ordem decrescente)")
+print(sort_df(data2010_under18, 'population', False)[:5][['state', 'population']], "\n")
 
 """
 Passo 9. Obtenha a média das populações (total e under18) por estado.
@@ -118,4 +133,24 @@ Passo 9. Obtenha a média das populações (total e under18) por estado.
 - Sugestão: Utilizar groupBy.
 """
 
-# TODO
+def groupby_mean(df: pd.DataFrame, group_col: str, data_col: str) -> pd.Series:
+    """
+    Agrupa um DataFrame por uma coluna específica e calcula a média da coluna de dados especificada.
+    """
+    df_copy = df.copy()
+    return df_copy.groupby(by=group_col)[data_col].mean()
+
+# Concatenar medias de `total` e `under18`
+state_pop_mean = pd.concat(
+    [
+        groupby_mean(data2010, 'state', 'population'),
+        groupby_mean(data2010_under18, 'state', 'population'),
+    ],
+    axis=1
+)
+
+# Renomear colunas
+state_pop_mean.columns = ['mean total', 'mean under18']
+
+print("Média das populações (total e under18) por estado.", "\n")
+print(state_pop_mean)
