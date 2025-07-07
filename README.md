@@ -86,9 +86,26 @@ Apresentar um procedimento com as principais atividades utilizadas num procedime
 - Introdução ao Plotly
 - Exemplos de gráficos interativos
 
-### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula14/notebook_aula14.ipynb) Aula 14 - Pacote Sklearn com classificação de dados
+### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula14/notebook_aula14.ipynb) Aula 14 - Pacote Sklearn com classificação de dados - Parte 1
 
-- Apresentar as principais funcionalidades do pacote sklearn, utilizando aprendizagem supervisionada como exemplo (o algoritmo KNN).
+- Utilizar objets datasets do sklearnr
+- Treinar, testar e avaliar classificadores
+- Classificador KNeighbors
+
+### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula15/notebook_aula15.ipynb) Aula 15 - Pacote Sklearn com classificação de dados - Parte 2
+
+- Classificador Árvore de Decisão (Decision Tree)
+- Classificador Random Forest
+- Exercícios com classificadores Decision Tree e Random Forest.
+
+### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula16/notebook_aula16.ipynb) Aula 16 - Aprendizagem Não Supervisionada com o Pacote Sklearn
+
+- Exemplos de datasets
+- Aspectos de análise preliminar de dados
+- Algoritmos de Agrupamento Off-line
+  - Algoritmo hierárquico aglomerativo
+  - Algoritmo K-means
+- Métricas de Avaliação de Desempenho de Algoritmos de Agrupamento
 
 ## Docentes Responsáveis
 
