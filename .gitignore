@@ -1,4 +1,6 @@
 .venv
 .idea
+**/*.pdf
 **/.ipynb_checkpoints
+**/__pycache__
 Results/
