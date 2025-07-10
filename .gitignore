@@ -1,10 +1,14 @@
+# Python
 .venv
-.idea
-
-iris
-helpers_05_08.py
-
-**/*.pdf
 **/.ipynb_checkpoints
 **/__pycache__
+
+# PyCharm
+.idea
+
+# Outros
 Results/
+iris
+helpers_05_08.py
+adult.*
+*.pdf
