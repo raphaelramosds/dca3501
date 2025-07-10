@@ -1,5 +1,9 @@
 .venv
 .idea
+
+iris
+helpers_05_08.py
+
 **/*.pdf
 **/.ipynb_checkpoints
 **/__pycache__
