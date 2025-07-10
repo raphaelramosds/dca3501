@@ -88,9 +88,10 @@ Apresentar um procedimento com as principais atividades utilizadas num procedime
 
 ### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula14/notebook_aula14.ipynb) Aula 14 - Pacote Sklearn com classificação de dados - Parte 1
 
-- Utilizar objets datasets do sklearnr
+- Utilizar objets datasets do sklearn
 - Treinar, testar e avaliar classificadores
 - Classificador KNeighbors
+- Pipeline de dados com Sklearn
 
 ### [![Jupyter](https://img.shields.io/badge/-Notebook-191A1B?style=flat-square&logo=jupyter)](./Aulas/Aula15/notebook_aula15.ipynb) Aula 15 - Pacote Sklearn com classificação de dados - Parte 2
 
