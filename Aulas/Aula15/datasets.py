@@ -1,5 +1,5 @@
 from abc import ABC
-from typing import Type
+from typing import Type, Optional, Union
 from urllib.parse import urlparse
 import pandas as pd
 import os
@@ -96,12 +96,27 @@ class IncomeDataset:
         - Define nomes das colunas
         - Converte colunas categóricas em códigos numéricos
         """
+        self.__category_maps = {}
         self.__dataframe.reset_index(drop=True, inplace=True)
         self.__dataframe.columns = IncomeDataset.columns
         for column_name in IncomeDataset.categoric:
-            self.__dataframe[column_name] = (
-                self.__dataframe[column_name].astype("category").cat.codes
+            category_series = self.__dataframe[column_name].astype("category")
+            self.__dataframe[column_name] = category_series.cat.codes
+            self.__category_maps[column_name] = dict(
+                enumerate(category_series.cat.categories)
             )
+
+    def get_category_maps(
+        self, category: Optional[str] = None
+    ) -> Union[dict[str, dict[int, str]], dict[int, str]]:
+        """
+        Retorna o dicionário de mapeamento de categorias.
+        - Se nenhum nome de categoria for passado, retorna o dicionário completo.
+        - Se uma categoria for passada, retorna apenas o mapeamento dessa categoria.
+        """
+        if category is None:
+            return self.__category_maps
+        return self.__category_maps[category]
 
 
 def load_income_test():

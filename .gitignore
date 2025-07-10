@@ -12,3 +12,5 @@ iris
 helpers_05_08.py
 adult.*
 *.pdf
+adult.data
+adult.test
