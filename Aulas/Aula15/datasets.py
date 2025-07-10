@@ -71,8 +71,8 @@ class IncomeDataset:
         self.__transform()
 
         # Separar matriz de features do vetor de labels
-        self.data = self.__income[IncomeDataset.features]
-        self.target = self.__income[IncomeDataset.label]
+        self.data = self.__dataframe[IncomeDataset.features]
+        self.target = self.__dataframe[IncomeDataset.label]
 
     def __load(self) -> pd.DataFrame:
         """
@@ -88,7 +88,7 @@ class IncomeDataset:
                 local_file, header=False, index=False
             )
 
-        self.__income = self.__data_loader_cls.load(local_file)
+        self.__dataframe = self.__data_loader_cls.load(local_file)
 
     def __transform(self) -> pd.DataFrame:
         """
@@ -96,11 +96,11 @@ class IncomeDataset:
         - Define nomes das colunas
         - Converte colunas categóricas em códigos numéricos
         """
-        self.__income.reset_index(drop=True, inplace=True)
-        self.__income.columns = IncomeDataset.columns
+        self.__dataframe.reset_index(drop=True, inplace=True)
+        self.__dataframe.columns = IncomeDataset.columns
         for column_name in IncomeDataset.categoric:
-            self.__income[column_name] = (
-                self.__income[column_name].astype("category").cat.codes
+            self.__dataframe[column_name] = (
+                self.__dataframe[column_name].astype("category").cat.codes
             )
 
 
